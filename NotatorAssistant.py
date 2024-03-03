@@ -66,7 +66,7 @@ class SnippetDialog(simpledialog.Dialog):
         "break" to prevent the default behavior of closing the dialog.
         """
         # Insert a newline character when the Enter key is pressed
-        self.text_entry.insert(tk.END, "\n")
+        self.text_entry.insert(tk.INSERT, "\n")
        
         # Prevent the default behavior of the Enter key (closing the dialog)
         return "break"
