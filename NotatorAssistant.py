@@ -8,6 +8,7 @@ import tkinter as tk
 from tkinter import ttk, simpledialog
 import keyboard
 import mouse
+import pyautogui
 
 class SnippetDialog(simpledialog.Dialog):
     def __init__(self, master, title, initial_values=None):
@@ -36,14 +37,26 @@ class SnippetDialog(simpledialog.Dialog):
         The widget that should have initial focus (in this case, keyword_entry).
         """
         # Create labels and entry widgets for entering keyword and text
-        tk.Label(master, text="Enter Keyword:").grid(row=0, column=0) 
-        tk.Label(master, text="Enter Text:").grid(row=1, column=0) 
+        tk.Label(master, text="Keyword*:").grid(row=0, column=0) 
+        tk.Label(master, text="Category:").grid(row=1, column=0)
+        tk.Label(master, text="Subcategory:").grid(row=2, column=0)
+        tk.Label(master, text="Reason:").grid(row=3, column=0)
+        tk.Label(master, text="Text*:").grid(row=4, column=0)
 
-        self.keyword_entry = tk.Entry(master) # Entry widget for entering keyword
+        self.keyword_entry = tk.Entry(master, width=32) # Entry widget for entering keyword
         self.keyword_entry.grid(row=0, column=1, sticky="w") # Position keyword entry widget
+
+        self.category_entry = tk.Entry(master, width=32) # Entry widget for entering category
+        self.category_entry.grid(row=1, column=1, sticky="w") # Position category entry widget
+
+        self.subcategory_entry = tk.Entry(master, width=32) # Entry widget for entering category
+        self.subcategory_entry.grid(row=2, column=1, sticky="w") # Position category entry widget
+
+        self.reason_entry = tk.Entry(master, width=32) # Entry widget for entering category
+        self.reason_entry.grid(row=3, column=1, sticky="w") # Position category entry widget
        
         self.text_entry = tk.Text(master, height=10, width=96) # Text widget for entering text
-        self.text_entry.grid(row=1, column=1) # Position text entry widget
+        self.text_entry.grid(row=4, column=1) # Position text entry widget
        
         # Bind the Enter key to insert a newline instead of closing the dialog
         self.text_entry.bind("<Return>", self.handle_return)
@@ -51,6 +64,9 @@ class SnippetDialog(simpledialog.Dialog):
         if self.initial_values:
             # If initial values are provided, set them in the entry widgets
             self.keyword_entry.insert(0, self.initial_values.get('keyword', ''))
+            self.category_entry.insert(0, self.initial_values.get('category', ''))
+            self.subcategory_entry.insert(0, self.initial_values.get('subcategory', ''))
+            self.reason_entry.insert(0, self.initial_values.get('reason', ''))
             self.text_entry.insert(tk.END, self.initial_values.get('text', ''))
        
         return self.keyword_entry
@@ -81,10 +97,14 @@ class SnippetDialog(simpledialog.Dialog):
         Returns:
         None
         """
-        # Get the entered keyword and text
+        # Get the entered keyword, category, subcategory, reason, and text
         keyword = self.keyword_entry.get()
+        category = self.category_entry.get()
+        subcategory = self.subcategory_entry.get()
+        reason = self.reason_entry.get()
         text = self.text_entry.get("1.0", tk.END).strip()
-        self.result = (keyword, text) # Set the result attribute with the entered values
+
+        self.result = (keyword, category, subcategory, reason, text) # Set the result attribute with the entered values
        
 class SettingsDialog(simpledialog.Dialog):
     def __init__(self, master, title, initial_values=None):
@@ -118,6 +138,7 @@ class SettingsDialog(simpledialog.Dialog):
         tk.Label(master, text="Reset on click:", anchor="w").grid(row=2, column=0, sticky="w")
         tk.Label(master, text="Reset on tab:", anchor="w").grid(row=3, column=0, sticky="w")
         tk.Label(master, text="Timeout value (seconds):", anchor="w").grid(row=4, column=0, sticky="w")
+        tk.Label(master, text="Click Interval (seconds):", anchor="w").grid(row=5, column=0, sticky="w")
 
         # Create BooleanVar and StringVar variables to hold settings values
         self.keyword_case_sensitive_var = tk.BooleanVar()
@@ -125,6 +146,7 @@ class SettingsDialog(simpledialog.Dialog):
         self.reset_on_click_var = tk.BooleanVar()
         self.reset_on_tab_var = tk.BooleanVar()
         self.timeout_value_var = tk.StringVar()
+        self.click_interval_var = tk.StringVar()
 
         # Create Checkbuttons and Entry widget to configure settings
         self.keyword_case_sensitive_checkbox = tk.Checkbutton(master, variable=self.keyword_case_sensitive_var)
@@ -139,8 +161,11 @@ class SettingsDialog(simpledialog.Dialog):
         self.reset_on_tab_checkbox = tk.Checkbutton(master, variable=self.reset_on_tab_var)
         self.reset_on_tab_checkbox.grid(row=3, column=1, sticky="e")
         
-        self.timeout_value_entry = tk.Entry(master, textvariable=self.timeout_value_var, width=2)
+        self.timeout_value_entry = tk.Entry(master, textvariable=self.timeout_value_var, width=3)
         self.timeout_value_entry.grid(row=4, column=1)
+
+        self.click_interval_entry = tk.Entry(master, textvariable=self.click_interval_var, width=3)
+        self.click_interval_entry.grid(row=5, column=1)
 
         if self.initial_values:
             # If initial values are provided, set them in the entry widgets
@@ -149,6 +174,7 @@ class SettingsDialog(simpledialog.Dialog):
             self.reset_on_click_var.set(self.initial_values.get('reset_on_click', False))
             self.reset_on_tab_var.set(self.initial_values.get('reset_on_tab', False))
             self.timeout_value_var.set(self.initial_values.get('timeout_value', ''))
+            self.click_interval_var.set(self.initial_values.get('click_interval', ''))
 
         return self.timeout_value_entry # Return the timeout value entry widget for initial focus
 
@@ -167,9 +193,10 @@ class SettingsDialog(simpledialog.Dialog):
         reset_on_backspace = self.reset_on_backspace_var.get()
         reset_on_click = self.reset_on_click_var.get()
         reset_on_tab = self.reset_on_tab_var.get()
-        timeout_value = self.timeout_value_var.get()    
+        timeout_value = self.timeout_value_var.get()
+        click_interval = self.click_interval_var.get()
 
-        self.result = {'case_sensitive': keyword_case_sensitive, 'backspace': reset_on_backspace, 'click': reset_on_click,  'tab': reset_on_tab, 'timeout': timeout_value}
+        self.result = {'case_sensitive': keyword_case_sensitive, 'backspace': reset_on_backspace, 'click': reset_on_click,  'tab': reset_on_tab, 'timeout': timeout_value, 'interval': click_interval}
 
 class NotatorAssistant:
     def __init__(self, root, snippets_data, settings_data):
@@ -194,6 +221,9 @@ class NotatorAssistant:
         root.iconbitmap(icon_path)
 
         self.current_word = ""  # Track the currently typed word
+        self.current_category = ""
+        self.current_subcategory = ""
+        self.current_reason = ""
         self.snippets_data = snippets_data
         self.settings_data = settings_data
        
@@ -220,6 +250,12 @@ class NotatorAssistant:
         self.clear_button = tk.Button(self.frame1, text="Clear Jam", command=self.clear_modifiers)
         self.clear_button.pack(side='right', padx=2)
 
+        self.fill_button = tk.Button(self.frame1, text="Auto Fill (Ctrl+`)", command=self.auto_fill_categories)
+        self.fill_button.pack(side='right', padx=2)
+
+        self.close_button = tk.Button(self.frame1, text="Auto Close (Alt+`)", command=self.auto_close_issues)
+        self.close_button.pack(side='right', padx=2)
+
         # Treeview for displaying snippets with scrollbar
         self.tree = ttk.Treeview(self.frame2, columns=('Keyword', 'Text'), show='headings', yscrollcommand=self.tree_yview)
         self.tree.heading('Keyword', text='Keyword', command=lambda: self.sort_treeview('Keyword', False))
@@ -228,7 +264,9 @@ class NotatorAssistant:
         self.tree.column('Text', width=800)
 
         # Populate the Treeview with snippet data
-        for keyword, text in snippets_data.items():
+        for keyword, snippet_entry in snippets_data.items():
+            category, subcategory, reason, text = snippet_entry
+            
             # Display only the first line of multiline text
             display_text = self.extract_first_line(text)
             self.tree.insert('', 'end', values=(keyword, display_text))
@@ -255,6 +293,10 @@ class NotatorAssistant:
         # Register the keyboard events
         keyboard.on_press(self.on_key_press)
 
+        # Set Pyautogui default values
+        pyautogui.PAUSE = float(self.settings_data.get('Settings', 'click_interval'))
+        pyautogui.FAILSAFE = True
+
         # Bind the TreeView selection event to update the Text widget
         self.tree.bind("<ButtonRelease-1>", self.on_tree_click)
 
@@ -263,7 +305,7 @@ class NotatorAssistant:
 
         # Initialize the timeout timer
         self.timeout_timer = None
-        self.timeout_duration = 5  # Timeout duration in seconds
+        self.timeout_duration = self.settings_data.get('Settings', 'timeout_value')  # Timeout duration in seconds
 
         # Start the timeout timer thread
         self.start_timeout_timer()
@@ -372,7 +414,8 @@ class NotatorAssistant:
             'reset_on_backspace': self.settings_data.get('Settings', 'reset_on_backspace'),
             'reset_on_click': self.settings_data.get('Settings', 'reset_on_click'),
             'reset_on_tab': self.settings_data.get('Settings', 'reset_on_tab'),
-            'timeout_value': self.settings_data.get('Settings', 'timeout_value')
+            'timeout_value': self.settings_data.get('Settings', 'timeout_value'),
+            'click_interval': self.settings_data.get('Settings', 'click_interval')
         }
 
         dialog = SettingsDialog(self.root, "Settings", initial_values=initial_values)
@@ -385,6 +428,10 @@ class NotatorAssistant:
             self.settings_data['Settings']['reset_on_click'] = str(result['click'])
             self.settings_data['Settings']['reset_on_tab'] = str(result['tab'])
             self.settings_data['Settings']['timeout_value'] = result['timeout']
+            self.settings_data['Settings']['click_interval'] = result['interval']
+
+            # Update the click interval
+            pyautogui.PAUSE = float(self.settings_data.get('Settings', 'click_interval'))
 
             # Save the updated settings to the INI file (if needed)
             self.save_settings_to_ini()
@@ -406,7 +453,6 @@ class NotatorAssistant:
             # Handle file not found error
             print(f"Error saving settings to INI file: {e}")
 
-
     def add_snippet(self):
         """
         Open the SnippetDialog to add a new snippet.
@@ -421,29 +467,43 @@ class NotatorAssistant:
         result = dialog.result
 
         if result:
-            keyword, text = result
+            keyword, category, subcategory, reason, text = result
 
             # Check if the keyword contains spaces
             if ' ' in keyword:
                 tk.messagebox.showinfo("Invalid Keyword", "The keyword cannot contain spaces. Please choose a different keyword.")
                 return
 
-            if keyword != "":
-                # Check if the keyword already exists in the snippets_data dictionary
-                if keyword in self.snippets_data:
-                    tk.messagebox.showinfo("Duplicate Keyword", f"The keyword '{keyword}' already exists. Please choose a different keyword.")
-                else:
-                    # Add the new snippet to the snippets_data dictionary
-                    self.snippets_data[keyword] = text
+            # Check if the keyword is empty
+            elif keyword == "":
+                tk.messagebox.showinfo("Invalid Keyword", "The keyword cannot be empty. Please enter a keyword.")
+                return
 
-                    # Display only the first line of multiline text
-                    display_text = self.extract_first_line(text)
+            # Check if the text is empty
+            elif text == "":
+                tk.messagebox.showinfo("Invalid Text", "The text cannot be empty. Please enter some text.")
+                return
 
-                    # Insert the new snippet into the TreeView
-                    self.tree.insert('', 'end', values=(keyword, display_text))
+            # Check if the keyword already exists in the snippets_data dictionary
+            elif keyword in self.snippets_data:
+                tk.messagebox.showinfo("Duplicate Keyword", f"The keyword '{keyword}' already exists. Please choose a different keyword.")
+                return
 
-                    # Add the new snippet to the XML file
-                    self.save_snippet_to_xml(keyword, text)
+            else:
+                # Create a tuple containing category, subcategory, reason, and text
+                snippet_entry = (category, subcategory, reason, text)
+                    
+                # Add the new snippet to the snippets_data dictionary
+                self.snippets_data[keyword] = snippet_entry
+                    
+                # Display only the first line of multiline text
+                display_text = self.extract_first_line(text)
+
+                # Insert the new snippet into the TreeView
+                self.tree.insert('', 'end', values=(keyword, display_text))
+
+                # Add the new snippet to the XML file
+                self.save_snippet_to_xml(keyword, snippet_entry)
     
     def edit_snippet(self):
         """
@@ -458,20 +518,38 @@ class NotatorAssistant:
         selected_item = self.tree.selection()
 
         if selected_item:
-            keyword, text = self.tree.item(selected_item, 'values')
-            fulltext = self.snippets_data.get(keyword, "")
+            keyword, display_text = self.tree.item(selected_item, 'values')
+            snippet_entry = self.snippets_data.get(keyword, "")
+            
+            category = snippet_entry[0]
+            subcategory = snippet_entry[1]
+            reason = snippet_entry[2]
+            fulltext = snippet_entry[3]
+
+            # Convert empty tags from nonetype to empty string
+            if category is None:
+                category = ""
+            if subcategory is None:
+                subcategory = ""
+            if reason is None:
+                reason = ""
+            if fulltext is None:
+                fulltext = ""
 
             # Pre-populate the dialog with the selected snippet values
-            initial_values = {'keyword': keyword, 'text': fulltext}
+            initial_values = {'keyword': keyword, 'category': category, 'subcategory': subcategory, 'reason': reason, 'text': fulltext}
             dialog = SnippetDialog(self.root, "Edit Snippet", initial_values=initial_values)
             result = dialog.result
 
             if result:
-                new_keyword, new_text = result
+                new_keyword, new_category, new_subcategory, new_reason, new_text = result
+
+                # Create a tuple containing new_category, new_subcategory, new_reason, and new_text
+                new_snippet_entry = (new_category, new_subcategory, new_reason, new_text) 
 
                 # Update the snippets_data dictionary
                 self.snippets_data.pop(keyword, None)
-                self.snippets_data[new_keyword] = new_text
+                self.snippets_data[new_keyword] = new_snippet_entry
 
                 # Display only the first line of multiline text
                 display_text = self.extract_first_line(new_text)
@@ -486,7 +564,7 @@ class NotatorAssistant:
                 self.text_display.config(state='disabled')  # Disable editing again
 
                 # Update the XML file (if needed)
-                self.update_snippet_in_xml(keyword, new_keyword, new_text)
+                self.update_snippet_in_xml(keyword, new_keyword, new_category, new_subcategory, new_reason, new_text)
                
     def remove_snippet(self):
         """
@@ -512,13 +590,13 @@ class NotatorAssistant:
             # Remove the snippet from the XML file
             self.remove_snippet_from_xml(keyword)
 
-    def save_snippet_to_xml(self, keyword, text):
+    def save_snippet_to_xml(self, keyword, snippet_entry):
         """
         Save a new snippet to the XML file.
 
         Parameters:
         - keyword: The keyword of the snippet.
-        - text: The text content of the snippet.
+        - snippet_entry: a tuple containing the category, subcategory, reason, and text of the snippet.
 
         Returns:
         None
@@ -531,7 +609,12 @@ class NotatorAssistant:
 
         # Create 'keyword' and 'text' sub-elements
         ET.SubElement(new_snippet, 'keyword').text = keyword
-        ET.SubElement(new_snippet, 'text').text = text
+        ET.SubElement(new_snippet, 'category').text = snippet_entry[0]
+        ET.SubElement(new_snippet, 'subcategory').text = snippet_entry[1]
+        ET.SubElement(new_snippet, 'reason').text = snippet_entry[2]
+        ET.SubElement(new_snippet, 'text').text = snippet_entry[3]
+        
+
 
         # Append the new snippet to the root
         root.append(new_snippet)
@@ -546,13 +629,16 @@ class NotatorAssistant:
         with open(xml_file, 'w') as file:
             file.write(xml_str)
 
-    def update_snippet_in_xml(self, old_keyword, new_keyword, new_text):
+    def update_snippet_in_xml(self, old_keyword, new_keyword, new_category, new_subcategory, new_reason, new_text):
         """
         Update an existing snippet in the XML file.
 
         Parameters:
         - old_keyword: The old keyword of the snippet to be updated.
         - new_keyword: The new keyword for the updated snippet.
+        - new_category: The new category for the updated snippet.
+        - new_subcategory: The new subcategory for the updated snippet.
+        - new_reason: The new reason for the updated snippet.
         - new_text: The new text content for the updated snippet.
 
         Returns:
@@ -565,6 +651,9 @@ class NotatorAssistant:
             if snippet.find('keyword').text == old_keyword:
                 # Update the keyword and text of the snippet
                 snippet.find('keyword').text = new_keyword
+                snippet.find('category').text = new_category
+                snippet.find('subcategory').text = new_subcategory
+                snippet.find('reason').text = new_reason
                 snippet.find('text').text = new_text
                 break
 
@@ -639,7 +728,8 @@ class NotatorAssistant:
         selected_item = self.tree.selection()
         if selected_item:
             keyword, text = self.tree.item(selected_item)['values']
-            fulltext = self.snippets_data.get(keyword, "")
+            snippet_entry = self.snippets_data.get(keyword, "")
+            fulltext = snippet_entry[3]
             self.text_display.config(state='normal')  # Enable editing temporarily
             self.text_display.delete(1.0, tk.END)
             self.text_display.insert(tk.END, f"{fulltext}")
@@ -697,7 +787,8 @@ class NotatorAssistant:
         
         if event.name == 'space':
             # check for matching keyword and expand text snippet
-            for keyword, text in self.snippets_data.items():
+            for keyword, snippet_entry in self.snippets_data.items():
+                category, subcategory, reason, text = snippet_entry
                 if (self.settings_data.get('Settings', 'keyword_case_sensitive') == "False"):
                     keyword = keyword.lower()
                     self.current_word = self.current_word.lower()
@@ -710,6 +801,14 @@ class NotatorAssistant:
                        
                     # write the expanded text
                     keyboard.write(text)
+
+                    # set the category, subcategory, reason
+                    if category is not None:
+                        self.current_category = category
+                        if subcategory is not None:
+                            self.current_subcategory = subcategory
+                            if reason is not None:
+                                self.current_reason = reason
 
             self.reset_current_word()  # Reset the current word
             self.reset_timeout_timer()  # Reset the timeout timer when space is pressed
@@ -728,10 +827,111 @@ class NotatorAssistant:
             else:
                 self.current_word = self.current_word[:-1]  # Remove the last character when backspace is pressed
                 self.reset_timeout_timer()  # Reset the timeout timer when backspace is pressed
+
+        elif event.name == '`' and keyboard.is_pressed('alt'):
+            self.auto_close_issues()
+
+        elif event.name == '`' and keyboard.is_pressed('ctrl'):
+            self.auto_fill_categories() 
    
         elif event.name in string.printable:
             self.current_word += event.name  # Add the pressed key to the current word
             self.reset_timeout_timer()  # Reset the timeout timer when a printable character is pressed
+
+    def image_exists(self, image_path, conf):
+        """
+        Check if an image appears on screen.
+
+        Parameters:
+        - image_path: The path to the image.
+        - conf: The accuracy level of locating the image.
+
+        Returns:
+        - True: If the image is found on screen
+        - False: If the image is not found on screen
+        """
+        image_location = None
+        try:
+            image_location = pyautogui.locateOnScreen(image_path, confidence=conf)
+        except Exception as e:
+            print ("Error while processing image:", str(e))
+
+        if (image_location is not None):
+            return True
+        else:
+            return False 
+
+    def click_image(self, image_path, conf):
+        """
+        Click on an image that is currently on screen.
+
+        Parameters:
+        - image_path: The path to the image.
+        - conf: The accuracy level of locating the image.
+
+        Returns:
+        - True: If the image is clicked
+        - False: If the image is not clicked
+        """
+        image_location = None
+        try: 
+            image_location = pyautogui.locateOnScreen(image_path, confidence=conf)
+        except Exception as e:
+            print("Error while processing image:", str(e))
+            
+        if (image_location is not None):
+            image_center = pyautogui.center(image_location)
+            pyautogui.click(image_center[0], image_center[1])
+            return True
+        else:
+            return False
+
+    def auto_close_issues(self):
+        """
+        Using PyAutoGUI, close all open issues
+
+        Parameters:
+        None
+
+        Returns:
+        None
+        """
+        if (self.image_exists('img/issue.png', 0.99)):
+            self.click_image('img/issue.png', 0.99)
+            self.click_image('img/first.png', 0.99)
+            self.click_image('img/tab_menu.png', 0.99)
+            self.click_image('img/close_issue.png', 0.99)
+        elif (self.click_image('img/issue_selected.png', 0.99)):
+            self.click_image('img/first.png', 0.99)
+            self.click_image('img/tab_menu.png', 0.99)
+            self.click_image('img/close_issue.png', 0.99)
+        
+        while (self.image_exists('img/next.png', 0.99)):
+            self.click_image('img/next.png', 0.99)
+            self.click_image('img/tab_menu.png', 0.99)
+            self.click_image('img/close_issue.png', 0.99)
+            self.click_image('img/yes.png', 0.99)
+
+        self.click_image('img/case_overview.png', 0.99)
+
+    def auto_fill_categories(self):
+        """
+        Using PyAutoGUI, fill in case categories
+
+        Parameters:
+        None
+
+        Returns:
+        None
+        """
+        if (self.image_exists('img/category_text_entry.png', 0.9)):
+            self.click_image('img/category_text_entry.png', 0.9)
+            pyautogui.write(self.current_category)
+            pyautogui.press('tab')
+            pyautogui.write(self.current_subcategory)
+            pyautogui.press('tab')
+            pyautogui.write(self.current_reason)
+            pyautogui.press('tab')
 
     def clear_modifiers(self):
         """
@@ -766,7 +966,7 @@ class NotatorAssistant:
 
 def read_snippets_from_xml(xml_file):
     """
-    Read snippets from an XML file and return a dictionary of keywords and texts.
+    Read snippets from an XML file and return a dictionary of keywords and snippet entries.
 
     Parameters:
     - xml_file: The path to the XML file containing snippets.
@@ -783,8 +983,16 @@ def read_snippets_from_xml(xml_file):
         # Iterate through each 'snippet' element in the XML
         for element in root.findall('snippet'):
             keyword = element.find('keyword').text  # Extract the keyword from the 'keyword' sub-element
+            category = element.find('category').text # Extract the text content from the 'category' sub-element
+            subcategory = element.find('subcategory').text # Extract the text content from the 'subcategory' sub-element
+            reason = element.find('reason').text # Extract the text content from the 'reason' sub-element
             text = element.find('text').text  # Extract the text content from the 'text' sub-element
-            snippets_data[keyword] = text  # Add the snippet to the dictionary with keyword as key and text as value
+
+            # Create a tuple containing category, subcategory, reason, and text
+            snippet_entry = (category, subcategory, reason, text) 
+
+            # Add the snippet_info tuple to the dictionary with keyword as key
+            snippets_data[keyword] = snippet_entry
 
         return snippets_data  # Return the dictionary of snippets
     except (FileNotFoundError, ET.ParseError) as e:

@@ -1,226 +1,209 @@
 <?xml version="1.0" ?>
 <snippets>
     <snippet>
+        <keyword>=1</keyword>
+        <text>Nationwide 4G 250MB</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=4</keyword>
+        <text>Nationwide 4G 1GB</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
         <keyword>=20</keyword>
         <text>Nationwide Unlimited 20GB (with U.S.) Promo</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=50</keyword>
         <text>Nationwide Unlimited 50GB + 5G (with U.S.) Promo</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=75</keyword>
         <text>Nationwide Unlimited 75GB + 5G (with U.S.)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=100</keyword>
         <text>Nationwide Unlimited 100GB + 5G (with U.S.)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=mx</keyword>
+        <text>Nationwide Unlimited 50GB + 5G (with U.S.-Mexico)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=rb</keyword>
+        <text>Nationwide Unlimited 60GB + 5G (Roam Beyond)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=ra11</keyword>
+        <text>Roam Beyond 1GB (RA11)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=rb11</keyword>
+        <text>Roam Beyond 1GB (RB11)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=ra51</keyword>
+        <text>Roam Beyond 5GB (RA51)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=rb51</keyword>
+        <text>Roam Beyond 5GB (RB51)</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=byop</keyword>
         <text>Bring Your Own Phone $5 x 24mo. $120</text>
-    </snippet>
-    <snippet>
-        <keyword>=am</keyword>
-        <text>1 NEW - Account Management</text>
-    </snippet>
-    <snippet>
-        <keyword>=info</keyword>
-        <text>3 NEW - Information</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=pay</keyword>
         <text>Customer inquiring about making a payment</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Billing</subcategory>
+        <reason>Payment</reason>
+    </snippet>
+    <snippet>
+        <keyword>=pay=</keyword>
+        <text>Took payment: $
+- Customer is aware of remaining account balance: $
+- Customer is aware that services have been resumed with this payment</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=auto</keyword>
         <text>Customer inquiring about managing autopay on account</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Billing</subcategory>
+        <reason>Setup or Remove AutoPay</reason>
+    </snippet>
+    <snippet>
+        <keyword>=auto=</keyword>
+        <text>Updated autopay with new card via payment IVR
+- Customer is aware automatic payments will be taken on the due date going forward</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=ptp</keyword>
         <text>Customer inquiring about setting up a promise to pay</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Billing</subcategory>
+        <reason>Setup Promise to Pay</reason>
+    </snippet>
+    <snippet>
+        <keyword>=ptp=</keyword>
+        <text>Setup Promise to Pay
+Payment Amount (Full amount due): 
+Payment Date: 
+Payment Method (If known): 
+Advised customer about the details of PTP: Y
+- Customer is aware payment must be received within 7 days
+- Customer is aware we will not accept another Promise to Pay for 90 days if they miss payment</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=pin</keyword>
         <text>Customer inquiring about updating pin</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Contact Info Changes</subcategory>
+        <reason>PIN Change</reason>
     </snippet>
     <snippet>
         <keyword>=email</keyword>
         <text>Customer inquiring about updating email</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Contact Info Changes</subcategory>
+        <reason>Update Contact/Address Info</reason>
     </snippet>
     <snippet>
         <keyword>=addr</keyword>
         <text>Customer inquiring about updating address</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Contact Info Changes</subcategory>
+        <reason>Update Contact/Address Info</reason>
     </snippet>
     <snippet>
         <keyword>=user</keyword>
         <text>Customer inquiring about updating users on account</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Contact Info Changes</subcategory>
+        <reason>Add/Update Users</reason>
     </snippet>
     <snippet>
         <keyword>=bl</keyword>
         <text>Customer inquiring about blacklisting phone</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Devices</subcategory>
+        <reason>Blacklisting</reason>
     </snippet>
     <snippet>
         <keyword>=wl</keyword>
         <text>Customer inquiring about whitelisting phone</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Devices</subcategory>
+        <reason>Whitelisting</reason>
     </snippet>
     <snippet>
         <keyword>=puk</keyword>
         <text>Customer inquiring about phone unlock code</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Devices</subcategory>
+        <reason>Unlock Code</reason>
     </snippet>
     <snippet>
         <keyword>=myacct</keyword>
         <text>Customer inquiring about unlocking MyAccount</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>MyAccount</subcategory>
+        <reason>Account Unlock</reason>
     </snippet>
     <snippet>
         <keyword>=payoff</keyword>
         <text>Customer inquiring about paying off MyTab</text>
-    </snippet>
-    <snippet>
-        <keyword>=ppp</keyword>
-        <text>Customer inquiring about deactivating the phone protection plan</text>
-    </snippet>
-    <snippet>
-        <keyword>=ppp=</keyword>
-        <text>Deactivated the PPP for: 
-- Customer is aware they will no longer be covered by out of warranty phone issues
-- Customer is aware we cannot re-add the PPP</text>
-    </snippet>
-    <snippet>
-        <keyword>=aal</keyword>
-        <text>Customer inquiring about adding a new line BYOD</text>
-    </snippet>
-    <snippet>
-        <keyword>=aaltab</keyword>
-        <text>Customer inquiring about adding a new line with a MyTab</text>
-    </snippet>
-    <snippet>
-        <keyword>=af</keyword>
-        <text>Customer inquiring about adding an add on: </text>
-    </snippet>
-    <snippet>
-        <keyword>=hug</keyword>
-        <text>Customer inquiring about completing a hardware upgrade</text>
-    </snippet>
-    <snippet>
-        <keyword>=msisdn</keyword>
-        <text>Customer inquiring about completing a MSISDN swap</text>
-    </snippet>
-    <snippet>
-        <keyword>=portin</keyword>
-        <text>Customer inquiring about porting in a phone number</text>
-    </snippet>
-    <snippet>
-        <keyword>=portout</keyword>
-        <text>Customer inquiring about porting out a phone number</text>
-    </snippet>
-    <snippet>
-        <keyword>=promo</keyword>
-        <text>Customer inquiring about missing promotion: </text>
-    </snippet>
-    <snippet>
-        <keyword>=rp</keyword>
-        <text>Customer inquiring about completing a rate plan change</text>
-    </snippet>
-    <snippet>
-        <keyword>=rp=</keyword>
-        <text>Changed Rate Plan for: 
-Change: 
-- Customer is aware of MRC: 
-- Customer is aware of promos: DD, BYOP $5x24 starting on 2nd bill
-- Customer is aware of proration that will appear on the next bill</text>
-    </snippet>
-    <snippet>
-        <keyword>=passed</keyword>
-        <text>Customer inquiring about suspending/closing account as the account holder has passed away</text>
-    </snippet>
-    <snippet>
-        <keyword>=vacsus</keyword>
-        <text>Customer inquiring about suspending the service with a vacation suspension</text>
-    </snippet>
-    <snippet>
-        <keyword>=vacres</keyword>
-        <text>Customer inquiring about resuming the service from a vacation suspension</text>
-    </snippet>
-    <snippet>
-        <keyword>=volsus=</keyword>
-        <text>Suspended Line: 
-- Customer is aware the line will be billed normally while suspended
-- Customer is aware to call back to get the line resumed</text>
-    </snippet>
-    <snippet>
-        <keyword>=acctnum</keyword>
-        <text>Customer inquiring about getting the account number</text>
-    </snippet>
-    <snippet>
-        <keyword>=react</keyword>
-        <text>Customer inquiring about getting line reactivated</text>
-    </snippet>
-    <snippet>
-        <keyword>=lnstat</keyword>
-        <text>Customer inquiring about the status of the line on the account</text>
-    </snippet>
-    <snippet>
-        <keyword>=simswap</keyword>
-        <text>Customer inquiring about completing a SIM swap</text>
-    </snippet>
-    <snippet>
-        <keyword>=tor</keyword>
-        <text>Customer inquiring about completing a TOR</text>
-    </snippet>
-    <snippet>
-        <keyword>=aroam</keyword>
-        <text>Customer inquiring about roaming addons</text>
-    </snippet>
-    <snippet>
-        <keyword>=visvm</keyword>
-        <text>Customer inquiring about the visual voicemail addon</text>
-    </snippet>
-    <snippet>
-        <keyword>=bill</keyword>
-        <text>Customer inquiring about the bill, the bill is higher than expected</text>
-    </snippet>
-    <snippet>
-        <keyword>=inqauto</keyword>
-        <text>Customer inquiring about the bill, asking about the autopay status</text>
-    </snippet>
-    <snippet>
-        <keyword>=inqcyc</keyword>
-        <text>Customer inquiring about the bill, asking about the billing cycle</text>
-    </snippet>
-    <snippet>
-        <keyword>=inqdep</keyword>
-        <text>Customer inquiring about the account, asking about their deposit</text>
-    </snippet>
-    <snippet>
-        <keyword>=refund</keyword>
-        <text>Customer inquiring about the account, asking about getting a refund</text>
-    </snippet>
-    <snippet>
-        <keyword>=portin=</keyword>
-        <text>MSISDN to port: 
-Existing Freedom Mobile MSISDN to Replace: 
-INCOMING MSISDN is active: Yes 
-Wireless/Wireline: Wireless 
-Carrier: 
-Cx Name w/ Carrier: 
-Address w/ Carrier: 
-Account Number, PIN and/or IMEI w/ Carrier:</text>
-    </snippet>
-    <snippet>
-        <keyword>=dp</keyword>
-        <text>Cancelled Line: 
-- Customer is aware the service will be disconnected immediately
-- Customer is aware the action cannot be reversed
-- Customer is aware the number will not be available to be ported out</text>
-    </snippet>
-    <snippet>
-        <keyword>=dp</keyword>
-        <text>Customer inquiring about deactivating their line:</text>
-    </snippet>
-    <snippet>
-        <keyword>=roam</keyword>
-        <text>Customer inquiring about roaming options for:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>MyTab</subcategory>
+        <reason>MyTab Pay-Off</reason>
     </snippet>
     <snippet>
         <keyword>=payoff=</keyword>
@@ -228,10 +211,503 @@ Account Number, PIN and/or IMEI w/ Carrier:</text>
 Settled Remaining MyTab Balance for: 
 - Customer is aware they now own the phone
 - Customer is aware they are now free to make changes to the plan</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=ppp</keyword>
+        <text>Customer inquiring about deactivating the phone protection plan</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Phone Protection Plan</subcategory>
+        <reason>Deact - Customer not Interested</reason>
+    </snippet>
+    <snippet>
+        <keyword>=ppp=</keyword>
+        <text>Deactivated the PPP for: 
+- Customer is aware they will no longer be covered by out of warranty phone issues
+- Customer is aware we cannot re-add the PPP</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=aal</keyword>
+        <text>Customer inquiring about adding a new BYOD line</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Add A Line BYOD</reason>
+    </snippet>
+    <snippet>
+        <keyword>=aal=</keyword>
+        <text>Added a new BYOD line
+Type: Prepaid/Postpaid
+MSISDN: 
+Rate Plan: 
+- Customer is aware of voice, text, and data features included in the plan
+- Customer is aware of plan pricing: 
+- Customer is aware of promotions: DD, BYOP $5x24 starting on 2nd bill
+- Customer is aware of the standard timeline for direct fulfillment: 5-7 Business Days
+- Customer has signed the contract package</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=af</keyword>
+        <text>Customer inquiring about adding a feature:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Add-On/One Time Pass</reason>
+    </snippet>
+    <snippet>
+        <keyword>=af=</keyword>
+        <text>Added Feature
+MSISDN:
+Feature: 
+Future Dated: No
+- Customer is aware of charge:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=df</keyword>
+        <text>Customer inquiring about deactivating a feature from: 
+Feature:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Add/Remove Feature</reason>
+    </snippet>
+    <snippet>
+        <keyword>=df=</keyword>
+        <text>Deactivated Feature
+MSISDN: 
+Feature: 
+Future Dated: No</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=hug</keyword>
+        <text>Customer inquiring about completing a hardware upgrade for device:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Hardware Upgrade</reason>
+    </snippet>
+    <snippet>
+        <keyword>=hug=</keyword>
+        <text>Completed Hardware Upgrade
+Type: TradeUp/MyTab
+MSISDN: 
+Device:
+- Customer is aware of plan pricing: 
+- Customer is aware of device charge:
+- Customer is aware of the trade up return value: 
+- Customer is aware of promotions: DD
+- Customer is aware of the standard timeline for direct fulfillment: 5-7 Business Days
+- Customer has signed the contract package</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=msisdn</keyword>
+        <text>Customer inquiring about completing a MSISDN swap</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>MSISDN Swap</reason>
+    </snippet>
+    <snippet>
+        <keyword>=msisdn=</keyword>
+        <text>Swapped MSISDN for: 
+Swapped MSISDN to: 
+- Customer is aware the MSISDN swap fee is: $10
+- Customer is aware to restart phone after the swap</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=portin</keyword>
+        <text>Customer inquiring about porting in a phone number</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>MSISDN Swap</reason>
+    </snippet>
+    <snippet>
+        <keyword>=portin=</keyword>
+        <text>Submitted port-in request
+- Customer is aware to respond to port out auth text message with YES within 90 minutes
+- Customer is aware that the number will port over within 60 minutes if all info is correct
+MSISDN to port: 
+Existing Freedom Mobile MSISDN to Replace: 
+INCOMING MSISDN is active: Yes 
+Wireless/Wireline: Wireless 
+Carrier: 
+Cx Name w/ Carrier: 
+Address w/ Carrier: 
+Account Number, PIN and/or IMEI w/ Carrier:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=portout</keyword>
+        <text>Customer inquiring about porting out a phone number</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>MSISDN Swap</reason>
+    </snippet>
+    <snippet>
+        <keyword>=portout=</keyword>
+        <text>Had RTS assist with manual port out authorization
+- Customer is aware the number will be ported to the new carrier within 60 minutes
+- Customer is aware that we will stop billing for the line as of today</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=promo</keyword>
+        <text>Customer inquiring about a missing promotion for: 
+Promotion:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Promo</reason>
+    </snippet>
+    <snippet>
+        <keyword>=rp</keyword>
+        <text>Customer inquiring about completing a rate plan change</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Service Maintenance</subcategory>
+        <reason>Rate Plan Change</reason>
+    </snippet>
+    <snippet>
+        <keyword>=rp=</keyword>
+        <text>Completed Rate Plan Change for: 
+Rate Plan: 
+Future Dated: No
+- Customer is aware of pricing: 
+- Customer is aware of promos: DD, BYOP $5x24 starting on 2nd bill
+- Customer is aware of proration that will appear on the next bill</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=vacsus</keyword>
+        <text>Customer inquiring about suspending the service with a vacation suspension</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Suspension/Unsuspension</subcategory>
+        <reason>Vacation Suspend</reason>
+    </snippet>
+    <snippet>
+        <keyword>=vacsus=</keyword>
+        <text>Setup Vacation Suspend
+MSISDN: 
+Future Dated for: 
+Number of Months: 
+- Customer is aware $15/mo charge for each month suspended will be billed on next invoice
+- Customer is aware they can request an early reconnect if necessary</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=vacres</keyword>
+        <text>Customer inquiring about resuming the service from a vacation suspension</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Suspension/Unsuspension</subcategory>
+        <reason>Vacation Unsuspend</reason>
+    </snippet>
+    <snippet>
+        <keyword>=vacres=</keyword>
+        <text>Resumed from Vacation Suspend
+MSISDN: 
+- Customer is aware that there will be a prorated charge for resuming service early</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=volsus</keyword>
-        <text>Customer inquiring about suspending the service with a voluntary suspension</text>
+        <text>Customer inquiring about suspending the service with a voluntary suspension for:</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Suspension/Unsuspension</subcategory>
+        <reason>Voluntary Suspension</reason>
+    </snippet>
+    <snippet>
+        <keyword>=volsus=</keyword>
+        <text>Suspended service at customer's request
+MSISDN: 
+- Customer is aware they will continue to be charged the regular MRC while suspended</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=volres</keyword>
+        <text>Customer inquiring about resuming the service from a voluntary suspension</text>
+        <category>1 NEW - Account Management</category>
+        <subcategory>Suspension/Unsuspension</subcategory>
+        <reason>Voluntary Suspension</reason>
+    </snippet>
+    <snippet>
+        <keyword>=volres=</keyword>
+        <text>Resumed service at customer's request
+MSISDN:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=acctnum</keyword>
+        <text>Customer inquiring about getting the account number</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Account Related</subcategory>
+        <reason>Account Number Request</reason>
+    </snippet>
+    <snippet>
+        <keyword>=acctnum=</keyword>
+        <text>At the customer's request, disclosed the account number</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=sus</keyword>
+        <text>Customer inquiring about getting their suspended line reactivated</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=sus=</keyword>
+        <text>Advised that service can be resumed with a minimum payment of: 
+Advised that we are unable to make a promise to pay due to recent broken promise</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=sim</keyword>
+        <text>Customer inquiring about completing a SIM swap</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Account Related</subcategory>
+        <reason>SIM Swap</reason>
+    </snippet>
+    <snippet>
+        <keyword>=sim=</keyword>
+        <text>Advised customer to visit retail to complete Sim Swap
+-or-
+Walked customer through completing sim swap via self serve options in My Account</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=tor</keyword>
+        <text>Customer inquiring about completing a TOR</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Account Related</subcategory>
+        <reason>TOR/Cancellations</reason>
+    </snippet>
+    <snippet>
+        <keyword>=tor=</keyword>
+        <text>Advised to have authorized users from donor and recipient account visit retail to complete TOR
+- Customer is aware we cannot guarantee that promotions will transfer to the new account
+- Customer is aware any active MyTabs would have to be paid off prior to transfer</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=usage</keyword>
+        <text>Customer inquiring about how much data is included in their plan and how much is used</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Account Related</subcategory>
+        <reason>Usage Inquiry</reason>
+    </snippet>
+    <snippet>
+        <keyword>=usage=</keyword>
+        <text>Usage Inquiry
+Advised customer has a total of: GB
+Advised customer has used: GB
+- Customer is aware that service will be throttled if the data is fully used
+- Customer is aware that the data will refresh on:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=roam</keyword>
+        <text>Customer inquiring about roaming options for:</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Network/Roaming</subcategory>
+        <reason>International Roaming</reason>
+    </snippet>
+    <snippet>
+        <keyword>=roam=</keyword>
+        <text>Added Addon for: 
+Addon: 
+Future Dated: No
+- Customer is aware the pass includes unlimited local or back-to-Canada calling
+- Customer is aware the pass includes unlimited global texting
+- Customer is aware data pay per use charges will apply if they fully consume the data
+- Customer is aware to enable the roaming feature on the device</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=bill</keyword>
+        <text>Customer inquiring about the bill, the bill is higher than expected</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>Account Balance</reason>
+    </snippet>
+    <snippet>
+        <keyword>=bill=</keyword>
+        <text>Reviewed the bill with the customer
+The reason the bill is higher than expected:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=dep</keyword>
+        <text>Customer inquiring about the account, asking about their deposit</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>Deposit</reason>
+    </snippet>
+    <snippet>
+        <keyword>=dep=</keyword>
+        <text>Advised customer to make all payments and remain in good standing until assessment date
+Deposit Assessment Date: 
+Deposit Refund Method: Cheque / Service Credit
+- Customer is aware they will receive a refund for the deposit amount
+- Customer is aware they will be migrated to a standard postpaid account</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=ppu</keyword>
+        <text>Customer inquiring about the account, asking about pay per use charges</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>PPU Charges</reason>
+    </snippet>
+    <snippet>
+        <keyword>=ppu=</keyword>
+        <text>Explained the PPU charges to the customer in detail</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=refund</keyword>
+        <text>Customer inquiring about the account, asking about getting a refund</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>Refunds</reason>
+    </snippet>
+    <snippet>
+        <keyword>=refund=</keyword>
+        <text>Provided Refund Details
+Type: Credit Card
+- Customer is aware refund will be issued back onto the same credit card
+- Customer is aware of the timeline for CC refund: 5-7 Business Days after final invoice
+-or-
+Provided Refund Details
+Type: Cheque
+Reconfirmed Address
+- Customer is aware refund will be issued by cheque to the address on file
+- Customer is aware of the timeline for refund cheque: 6-8 Weeks after final invoice</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=device</keyword>
+        <text>Customer inquiring about getting more info on device features and pricing</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Devices</subcategory>
+        <reason>Pricing</reason>
+    </snippet>
+    <snippet>
+        <keyword>=device=</keyword>
+        <text>Provided Device Info
+Type: TradeUp/MyTab
+Device: 
+Monthly Charge for 24 months: 
+Retail Price: 
+Upfront: $0.00
+TradeUp Amount: 
+Savings:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=tab</keyword>
+        <text>Customer inquiring about their MyTab, asking what the monthly charge, remaining months and remaining balance is</text>
+        <category>3 NEW - Information</category>
+        <subcategory>MyTab</subcategory>
+        <reason>Balance</reason>
+    </snippet>
+    <snippet>
+        <keyword>=tab=</keyword>
+        <text>Provided MyTab Info
+MSISDN: 
+Device: 
+Monthly MyTab Charge: 
+Remaining Months: 
+Remaining MyTab Balance:</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=br</keyword>
+        <text>Customer inquiring about completing a buyer's remorse return</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Policy</subcategory>
+        <reason>Buyers Remorse</reason>
+    </snippet>
+    <snippet>
+        <keyword>=cf</keyword>
+        <text>Customer inquiring about the connection fee</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Policy</subcategory>
+        <reason>Connection Fee</reason>
+    </snippet>
+    <snippet>
+        <keyword>=plan</keyword>
+        <text>Customer inquiring about getting more info on plan features and pricing</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Rate Plan</subcategory>
+        <reason>Plan Pricing Inquiry</reason>
+    </snippet>
+    <snippet>
+        <keyword>=plan=</keyword>
+        <text>Explained the plan: 
+Pricing: 34/mo
+Features: 50GB Freedom Nationwide + U.S, Unlimited Canada/US wide calling, Unlimited Global Texting</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=dp</keyword>
+        <text>Customer inquiring about deactivating their line:
+Reason:</text>
+        <category>Loyalty Only - Not Retained</category>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
         <keyword>=dp=</keyword>
@@ -240,52 +716,83 @@ Settled Remaining MyTab Balance for:
 - Customer is aware the action cannot be reversed
 - Customer is aware the phone number will not be available to be ported out
 - Customer is aware there will be a proration on the next bill for the cancellation</text>
+        <category/>
+        <subcategory/>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=confee</keyword>
-        <text>Customer inquiring about connection fee, was expecting a credit</text>
+        <keyword>=coverage</keyword>
+        <text>Customer reporting issue with coverage on the network</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>Coverage</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=volres</keyword>
-        <text>Customer inquiring about resuming services from voluntary suspension</text>
+        <keyword>=data</keyword>
+        <text>Customer reporting issue with mobile data</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>Data</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=roam=</keyword>
-        <text>Added Addon for: 
-One Time Pass: Roam Beyond 1GB 73 Destinations
-Future Dated: No
-- Customer is aware the pass includes unlimited local or back-to-Canada calling
-- Customer is aware the pass includes unlimited global texting
-- Customer is aware data pay per use charges will apply if they fully consume the data allotment of the pass</text>
+        <keyword>=mms</keyword>
+        <text>Customer reporting issue with MMS</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>MMS</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=auto=</keyword>
-        <text>Updated the card on file for autopay
-- Customer is aware payments will be taken automatically on the due date every month</text>
+        <keyword>=roaming</keyword>
+        <text>Customer reporting an issue with roaming service</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>Roaming</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=af=</keyword>
-        <text>Added Addon for:
-Addon:</text>
+        <keyword>=sms</keyword>
+        <text>Customer reporting issue with SMS</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>SMS</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=inc</keyword>
-        <text>INC1458900 - Usage Charges Reversal</text>
+        <keyword>=voice</keyword>
+        <text>Customer reporting issue with voice calling</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>Voice</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=tab</keyword>
-        <text>Customer inquiring about MyTab monthly charge, months remaining, and remaining balance</text>
+        <keyword>=vm</keyword>
+        <text>Customer reporting issue with voicemail service</text>
+        <category>4 NEW - Network Complaints</category>
+        <subcategory>Voicemail</subcategory>
+        <reason/>
     </snippet>
     <snippet>
-        <keyword>=plan</keyword>
-        <text>Customer inquiring about rate plan data allotment, features, and pricing</text>
+        <keyword>=credit</keyword>
+        <text>Customer inquiring about getting a credit
+Reason:</text>
+        <category>3 NEW - Information</category>
+        <subcategory>Promotions</subcategory>
+        <reason>Care/SUP/Loyalty Service Credit</reason>
     </snippet>
     <snippet>
-        <keyword>=vacsus=</keyword>
-        <text>Setup vacation suspension for: 
-Requested Vacation Months: 
-- Customer is aware of the vacation start and end dates
-- Customer is aware that the 15.00 fee times the number of months requested will be billed and is non refundable
-- Customer is aware that if service is resumed early, their MRC will be prorated to the date of reactivation</text>
+        <keyword>=credit=</keyword>
+        <text>Applied Credit
+Credit Amount: $
+Reason: 
+- Customer is aware that going forward: 
+- Customer is aware this is a one time gesture and will consider the issue resolved</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+    </snippet>
+    <snippet>
+        <keyword>=paystat</keyword>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>Payment Status</reason>
+        <text>Customer inquiring about the status of a recent payment</text>
     </snippet>
 </snippets>
