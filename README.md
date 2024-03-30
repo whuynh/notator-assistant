@@ -15,6 +15,12 @@ Here's a brief overview of how to use Notator Assistant:
 - Remove Snippet: Select a snippet from the list and click on the "Remove Snippet" button to delete it from the program.
 - Clear Jam: Hit this button if something goes wrong with the program. In particular, you may need to hit this button if you have to lock and unlock your Windows session.
 - Keyword Shortcuts: Whenever you type the keyword shortcut and hit spacebar, your keyword will be replaced with the corresponding text that was previously defined in the list of snippets.
+- Auto Close: Click the Auto Close button or use the keyboard shortcut Alt+` to have the program automatically close all your issues. There must be nothing covering the Issue button and the broswer window must be on your main screen.
+- Auto Fill: Click the Auto Fill button or use the keyboard shortcut Ctrl+` to have the program automatically fill in your categories. There must be nothing covering the Category field and you must be on the Case Overview tab.
+
+## Failsafe
+If anything goes wrong with the auto clicking you can move the mouse to any of the corners of the screen to retake manual control
+If anything goes wrong with the keyword shortcuts you can hit the Clear Jam button
 
 ## License
 This project is licensed under the [MIT License](https://github.com/whuynh/notator-assistant/blob/main/LICENSE). You are free to modify and distribute this software as per the terms of the license.
