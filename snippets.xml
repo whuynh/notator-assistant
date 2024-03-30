@@ -44,7 +44,7 @@
     </snippet>
     <snippet>
         <keyword>=mx</keyword>
-        <text>Nationwide Unlimited 50GB + 5G (with U.S.-Mexico)</text>
+        <text>Nationwide Unlimited 60GB + 5G (with U.S.-Mexico) Promo</text>
         <category/>
         <subcategory/>
         <reason/>
@@ -100,8 +100,8 @@
     </snippet>
     <snippet>
         <keyword>=pay=</keyword>
-        <text>Took payment: $
-- Customer is aware of remaining account balance: $
+        <text>Took payment: 
+- Customer is aware of remaining account balance: 
 - Customer is aware that services have been resumed with this payment</text>
         <category/>
         <subcategory/>
@@ -234,9 +234,9 @@ Settled Remaining MyTab Balance for:
     <snippet>
         <keyword>=aal</keyword>
         <text>Customer inquiring about adding a new BYOD line</text>
-        <category>1 NEW - Account Management</category>
-        <subcategory>Service Maintenance</subcategory>
-        <reason>Add A Line BYOD</reason>
+        <category>6 NEW - Sales</category>
+        <subcategory>New Customer</subcategory>
+        <reason>New Customer BYOD</reason>
     </snippet>
     <snippet>
         <keyword>=aal=</keyword>
@@ -292,8 +292,8 @@ Future Dated: No</text>
     <snippet>
         <keyword>=hug</keyword>
         <text>Customer inquiring about completing a hardware upgrade for device:</text>
-        <category>1 NEW - Account Management</category>
-        <subcategory>Service Maintenance</subcategory>
+        <category>6 NEW - Sales</category>
+        <subcategory>Existing Customer</subcategory>
         <reason>Hardware Upgrade</reason>
     </snippet>
     <snippet>
@@ -358,7 +358,7 @@ Account Number, PIN and/or IMEI w/ Carrier:</text>
         <text>Customer inquiring about porting out a phone number</text>
         <category>1 NEW - Account Management</category>
         <subcategory>Service Maintenance</subcategory>
-        <reason>MSISDN Swap</reason>
+        <reason>Porting</reason>
     </snippet>
     <snippet>
         <keyword>=portout=</keyword>
@@ -376,6 +376,16 @@ Promotion:</text>
         <category>1 NEW - Account Management</category>
         <subcategory>Service Maintenance</subcategory>
         <reason>Promo</reason>
+    </snippet>
+    <snippet>
+        <keyword>=promo=</keyword>
+        <category/>
+        <subcategory/>
+        <reason/>
+        <text>Added Promotion
+MSISDN: 
+Promotion:
+Reason:</text>
     </snippet>
     <snippet>
         <keyword>=rp</keyword>
@@ -479,9 +489,9 @@ MSISDN:</text>
     <snippet>
         <keyword>=sus</keyword>
         <text>Customer inquiring about getting their suspended line reactivated</text>
-        <category/>
-        <subcategory/>
-        <reason/>
+        <category>3 NEW - Information</category>
+        <subcategory>Billing</subcategory>
+        <reason>Bill Cycle/Due/Top-Up Date</reason>
     </snippet>
     <snippet>
         <keyword>=sus=</keyword>
@@ -666,7 +676,8 @@ MSISDN:
 Device: 
 Monthly MyTab Charge: 
 Remaining Months: 
-Remaining MyTab Balance:</text>
+Remaining MyTab Balance:
+Trade Up Return Value:</text>
         <category/>
         <subcategory/>
         <reason/>
@@ -789,10 +800,33 @@ Reason:
         <reason/>
     </snippet>
     <snippet>
+        <keyword>=mig</keyword>
+        <category/>
+        <subcategory/>
+        <reason/>
+        <text>Customer inquiring about completing a migration</text>
+    </snippet>
+    <snippet>
+        <keyword>=mig=</keyword>
+        <category/>
+        <subcategory/>
+        <reason/>
+        <text>Completed Postpaid to Prepaid Migration
+- Customer is aware of the new top up date: 
+- Customer is aware they will need to top up the full MRC</text>
+    </snippet>
+    <snippet>
         <keyword>=paystat</keyword>
-        <category>3 NEW - Information</category>
-        <subcategory>Billing</subcategory>
-        <reason>Payment Status</reason>
-        <text>Customer inquiring about the status of a recent payment</text>
+        <category/>
+        <subcategory/>
+        <reason/>
+        <text>Customer is inquiring about the status of a recent payment</text>
+    </snippet>
+    <snippet>
+        <keyword>=paystat=</keyword>
+        <category/>
+        <subcategory/>
+        <reason/>
+        <text>PLACEHOLDER</text>
     </snippet>
 </snippets>
