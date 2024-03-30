@@ -924,6 +924,8 @@ class NotatorAssistant:
         Returns:
         None
         """
+        if (self.image_exists('img/case_overview.png', 0.99)):
+            self.click_image('img/case_overview.png', 0.99)
         if (self.image_exists('img/category_text_entry.png', 0.9)):
             self.click_image('img/category_text_entry.png', 0.9)
             pyautogui.write(self.current_category)
@@ -960,6 +962,7 @@ class NotatorAssistant:
         Returns:
         None
         """
+        self.clear_modifiers()
         keyboard.unhook_all()
         mouse.unhook_all()
         self.root.destroy()
